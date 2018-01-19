@@ -1,0 +1,76 @@
+@media (min-width: 992px) {
+
+	.navbar-nav .btn {
+	    padding: 0.6em 1em !important;
+	    margin-top: 0.5em;
+	    color: #333 !important;
+	}
+
+	.navbar-nav .btn:hover {
+	    color: white !important;
+	}
+
+	.sidebar {
+		padding-top: 20px;
+	}
+
+	.sidebar-menu li a {
+		font-size: 0.8rem;
+		cursor: pointer;
+	}
+
+	.content-wrapper {
+		background-color: white;
+		padding-top: 80px;
+    padding-left: 30px;
+	}
+
+	.container.contenido {
+		padding-top: 80px;
+	}
+
+	.box-case {
+		margin-top: 10%;
+	}
+
+}
+
+.service-single{
+    margin-top: 30px;
+  padding-bottom: 10px;
+  border: 1px solid #e8e8e8;
+  box-shadow: 0 0 10px #e8e8e8;
+}
+.service-single .box-top{
+  background: #fed136;
+  padding: 30px;
+  color: #fff;
+}
+.service-single .box-top i{
+  font-size: 50px;
+  padding: 20px 0;
+}
+.service-single .box-top h2{
+  font-size: 16px;
+  text-transform: uppercase;
+  margin-bottom: 45px;
+}
+.service-single .box-down{
+  max-width: 350px;
+  margin: 0 auto;
+  border-radius: 100%;
+  background: #fff;
+  margin-top: -50px;
+  padding: 50px 25px 10px 25px;
+}
+.service-single .btn-holly{
+    background: #fff;
+	border:1px solid #f0f0f0;
+	border-radius: 20px;
+	color: #fed136;
+}
+.service-single .btn-holly:hover{
+	background: #fed136;
+	border-color: #fed136;
+	color: #fff;
+}
