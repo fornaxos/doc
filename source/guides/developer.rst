@@ -6,4 +6,5 @@ Guía de desarrollo
    :glob:
 
    /developer/structure
+   /developer/fnos-object
    /developer/route
