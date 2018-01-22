@@ -1,7 +1,7 @@
 Estructura de Ficheros
 =======================
 
-Se ha organizado los archivos y carpetas para que sean fáciles de entender y usar. A continuación se muestra la estructura de ficheros del proyecto:
+Se han organizado los archivos y carpetas para que sean fáciles de entender y usar. A continuación se muestra la estructura de ficheros del proyecto:
 
 .. code-block:: text
 
@@ -30,6 +30,8 @@ Veamos más de cerca cada directorio y archivo, y comprendamos cómo funciona.
 Estructura de los Plugins
 --------------------------
 
+La estructura de los plugins se ha organizado de forma que el desarrollo sea lo mas limpio posible, para ello se propone la siguiente jerarquía:
+
 .. code-block:: text
 
     <nombre-plugin>/
@@ -40,3 +42,8 @@ Estructura de los Plugins
     │ └ images/
     ├ view/
     └ router.php
+
+* ``class/`` : Aquí se alojaran todas las clases necesarias para el plugin. El nombre debe ser el siguiente: <nombre-clase>.class.php
+* ``assets/`` : Se alojaran todos los ficheros estáticos (css, javascript, imágenes y fuentes).
+* ``view/`` : Aquí se alojaran las vistas necesarias de el plugin.
+* ``router.php`` : Fichero de control del plugin.
