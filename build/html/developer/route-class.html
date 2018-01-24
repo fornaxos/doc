@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Definición de rutas &mdash; FornaxOS 1.0 documentation</title>
+  <title>route &mdash; FornaxOS 1.0 documentation</title>
   
 
   
@@ -45,8 +45,9 @@
   
         <link rel="search" title="Search" href="../search.html"/>
     <link rel="top" title="FornaxOS 1.0 documentation" href="../index.html"/>
-        <link rel="up" title="Guía de desarrollo" href="../guides/developer.html"/>
-        <link rel="prev" title="Método core" href="core-method.html"/>
+        <link rel="up" title="core" href="core-method.html"/>
+        <link rel="next" title="Definición de rutas" href="route.html"/>
+        <link rel="prev" title="core" href="core-method.html"/>
 	
 		<!-- Google Analytics -->
 		<script>
@@ -119,8 +120,14 @@
 <li class="toctree-l1"><a class="reference internal" href="../guides/administrator.html">Guía de Administración</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../guides/developer.html">Guía de Desarrollo</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="structure.html">Estructura de Ficheros</a></li>
-<li class="toctree-l2"><a class="reference internal" href="fnos-object.html">Objeto <code class="docutils literal"><span class="pre">$fnos</span></code></a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Definición de rutas</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="fnos-object.html">Objeto <code class="docutils literal"><span class="pre">$fnos</span></code></a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="core-method.html">core</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">route</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="route.html">Definición de rutas</a></li>
 </ul>
 </li>
 </ul>
@@ -157,11 +164,15 @@
     
       <li><a href="../guides/developer.html">Guía de desarrollo</a> &raquo;</li>
     
-    <li>Definición de rutas</li>
+      <li><a href="fnos-object.html">Objeto <code class="docutils literal"><span class="pre">$fnos</span></code></a> &raquo;</li>
+    
+      <li><a href="core-method.html">core</a> &raquo;</li>
+    
+    <li>route</li>
     <li class="wy-breadcrumbs-aside">
       
         
-          <a href="https://github.com/fornaxos/docs/blob/master/source/developer/route.rst" class="fa fa-github"> Edit</a>
+          <a href="https://github.com/fornaxos/docs/blob/master/source/developer/route-class.rst" class="fa fa-github"> Edit</a>
         
       
     </li>
@@ -171,8 +182,65 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="definicion-de-rutas">
-<h1>Definición de rutas<a class="headerlink" href="#definicion-de-rutas" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="route">
+<h1>route<a class="headerlink" href="#route" title="Permalink to this headline">¶</a></h1>
+<p>La clase route es la encargada de gestionar las rutas, desde ella podremos definir los enlaces de cada aplicación.</p>
+<div class="section" id="definicion-de-rutas">
+<h2>Definición de rutas<a class="headerlink" href="#definicion-de-rutas" title="Permalink to this headline">¶</a></h2>
+<p>Para definir las rutas se ha de invocar a la siguiente función en el archivo router.php de la aplicación que se está desarrollando:</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+  <span class="nv">$fnos</span><span class="o">-&gt;</span><span class="na">core</span><span class="p">(</span><span class="s1">&#39;route&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">map</span><span class="p">(</span><span class="s1">&#39;settings/users&#39;</span><span class="p">,</span> <span class="k">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">echo</span> <span class="s2">&quot;Entro en la función&quot;</span><span class="p">;</span>
+  <span class="p">})</span>
+  <span class="o">-&gt;</span><span class="na">view</span><span class="p">(</span><span class="s1">&#39;views/users.php&#39;</span><span class="p">)</span>
+  <span class="o">-&gt;</span><span class="na">conf</span><span class="p">([</span><span class="s1">&#39;auth&#39;</span> <span class="o">=&gt;</span> <span class="k">true</span><span class="p">,</span> <span class="s1">&#39;theme&#39;</span> <span class="o">=&gt;</span> <span class="k">true</span><span class="p">]);</span>
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+</div>
+<p>ó</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+  <span class="nv">$fnos</span><span class="o">-&gt;</span><span class="na">core</span><span class="p">(</span><span class="s1">&#39;route&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">map</span><span class="p">(</span><span class="s1">&#39;settings/users&#39;</span><span class="p">,</span> <span class="nx">settings_users</span><span class="p">())</span>
+  <span class="o">-&gt;</span><span class="na">view</span><span class="p">(</span><span class="s1">&#39;views/users.php&#39;</span><span class="p">)</span>
+  <span class="o">-&gt;</span><span class="na">conf</span><span class="p">([</span><span class="s1">&#39;auth&#39;</span> <span class="o">=&gt;</span> <span class="k">true</span><span class="p">,</span> <span class="s1">&#39;theme&#39;</span> <span class="o">=&gt;</span> <span class="k">true</span><span class="p">]);</span>
+
+  <span class="k">function</span> <span class="nf">settings_users</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">echo</span> <span class="s2">&quot;Entro en la función&quot;</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">map</span></code>: Con esta función mapeamos la ruta y el controller a cargar.</li>
+<li><code class="docutils literal"><span class="pre">view</span></code>: En caso de ser necesaria una vista se definirá agregando la ruta relativa en donde esté ubicada dicha vista.</li>
+<li><code class="docutils literal"><span class="pre">conf</span></code>: Se cargará la configuración deseada para dicha ruta. El formato aceptado es JSON.</li>
+</ul>
+</div>
+<div class="section" id="configuracion-soportada">
+<h2># Configuración soportada<a class="headerlink" href="#configuracion-soportada" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="18%" />
+<col width="66%" />
+<col width="16%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Configuración</th>
+<th class="head">Descripción</th>
+<th class="head">por defecto</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>auth</td>
+<td>valida la autenticación del usuario</td>
+<td>false</td>
+</tr>
+<tr class="row-odd"><td>theme</td>
+<td>Define si se ha de cargar el tema visual por defecto</td>
+<td>false</td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 
 
@@ -185,8 +253,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
+        <a href="route.html" class="btn btn-neutral float-right" title="Definición de rutas" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
-        <a href="core-method.html" class="btn btn-neutral" title="Método core" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+        <a href="core-method.html" class="btn btn-neutral" title="core" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -228,7 +298,7 @@
             </dd>
             
             <dd>
-                <a href="https://github.com/fornaxos/docs/blob/master/source/developer/route.rst"> Editar en GitHub</a>
+                <a href="https://github.com/fornaxos/docs/blob/master/source/developer/route-class.rst"> Editar en GitHub</a>
             </dd>
             
         </dl>

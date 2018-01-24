@@ -1,15 +1,15 @@
 Objeto ``$fnos``
 =================
 
-+---------+------------------------------+
-| Metodos | Descripción                  |
-+=========+==============================+
-| core    | Llamada a clases del sistema |
-+---------+------------------------------+
+A continuación se listan los métodos disponibles para el objeto ``$fnos``:
 
++--------------------+------------------------------+
+| Métodos            | Descripción                  |
++====================+==============================+
+| :doc:`core-method` | Llamada a clases del sistema |
++--------------------+------------------------------+
 
 .. toctree::
-   :maxdepth: 2
-   :glob:
+   :hidden:
 
    /developer/core-method
