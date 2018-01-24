@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Método core &mdash; FornaxOS 1.0 documentation</title>
+  <title>core &mdash; FornaxOS 1.0 documentation</title>
   
 
   
@@ -46,7 +46,7 @@
         <link rel="search" title="Search" href="../search.html"/>
     <link rel="top" title="FornaxOS 1.0 documentation" href="../index.html"/>
         <link rel="up" title="Objeto $fnos" href="fnos-object.html"/>
-        <link rel="next" title="Definición de rutas" href="route.html"/>
+        <link rel="next" title="route" href="route-class.html"/>
         <link rel="prev" title="Objeto $fnos" href="fnos-object.html"/>
 	
 		<!-- Google Analytics -->
@@ -121,7 +121,10 @@
 <li class="toctree-l1 current"><a class="reference internal" href="../guides/developer.html">Guía de Desarrollo</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="structure.html">Estructura de Ficheros</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="fnos-object.html">Objeto <code class="docutils literal"><span class="pre">$fnos</span></code></a><ul class="current">
-<li class="toctree-l3 current"><a class="current reference internal" href="#">Método <code class="docutils literal"><span class="pre">core</span></code></a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">core</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="route-class.html">route</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="route.html">Definición de rutas</a></li>
@@ -163,7 +166,7 @@
     
       <li><a href="fnos-object.html">Objeto <code class="docutils literal"><span class="pre">$fnos</span></code></a> &raquo;</li>
     
-    <li>Método <code class="docutils literal"><span class="pre">core</span></code></li>
+    <li>core</li>
     <li class="wy-breadcrumbs-aside">
       
         
@@ -177,8 +180,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="metodo-core">
-<h1>Método <code class="docutils literal"><span class="pre">core</span></code><a class="headerlink" href="#metodo-core" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="core">
+<h1>core<a class="headerlink" href="#core" title="Permalink to this headline">¶</a></h1>
 <p>Con este método se puede invocar a las clases del core, automáticamente el sistema verificará si la clase ya fue cargada y en caso contrario la cargará. Ejemplo de llamada al método:</p>
 <div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
   <span class="nv">$fnos</span><span class="o">-&gt;</span><span class="na">core</span><span class="p">(</span><span class="s2">&quot;route&quot;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">getURL</span><span class="p">();</span>
@@ -188,8 +191,8 @@
 <p>A continuación se muestran todas las clases disponibles en el core.</p>
 <table border="1" class="docutils">
 <colgroup>
-<col width="19%" />
-<col width="81%" />
+<col width="40%" />
+<col width="60%" />
 </colgroup>
 <thead valign="bottom">
 <tr class="row-odd"><th class="head">Clase</th>
@@ -197,11 +200,13 @@
 </tr>
 </thead>
 <tbody valign="top">
-<tr class="row-even"><td>route</td>
+<tr class="row-even"><td><a class="reference internal" href="route-class.html"><span class="doc">route</span></a></td>
 <td>Gestión de rutas del sistema</td>
 </tr>
 </tbody>
 </table>
+<div class="toctree-wrapper compound">
+</div>
 </div>
 
 
@@ -214,7 +219,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="route.html" class="btn btn-neutral float-right" title="Definición de rutas" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="route-class.html" class="btn btn-neutral float-right" title="route" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="fnos-object.html" class="btn btn-neutral" title="Objeto $fnos" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
